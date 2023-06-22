@@ -10,7 +10,7 @@ router.get("/all", (req,res)=>{
 router.post("/new", bodyParser.json(), (req,res)=>{
     let title = req.body.title
     let description = req.body.description
-
+    console.log(title)
     posts.newPost(title,description)
 
     res.send("post enviado com sucesso")

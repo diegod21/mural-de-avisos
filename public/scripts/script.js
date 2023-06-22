@@ -24,10 +24,11 @@ function updatePost(){
     })
 }
 function newPost(){
-    let title = document.getElementById("title")
-    let description = document.getElementById("desc")
+    let title = document.getElementById("title").value;
+    let description = document.getElementById("desc").value;
 
-    let post = {title, description}
+    let post = {title:title, 
+                description:description}
 
     const options = {
         method: "POST",
@@ -35,7 +36,7 @@ function newPost(){
         body: JSON.stringify(post)
     }
 
-    fetch("http://locashost:2000/api/new", options).then(res => {
+    fetch("http://localhost:2000/api/new", options).then(res => {
             console.log(res)
             updatePost()
     })
