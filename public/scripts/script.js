@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })
 
 function updatePost(){
-    fetch("http://localhost:2000/api/all").then(res=>{
+    fetch("http://192.168.1.9:2000/api/all").then(res=>{
         return res.json().then(json=>{
             let postsElements = ''
 
@@ -32,11 +32,11 @@ function newPost(){
 
     const options = {
         method: "POST",
-        headers: new Headers({'content-type':'aplication/json'}),
+        headers: new Headers({'content-type':'application/json'}),
         body: JSON.stringify(post)
     }
 
-    fetch("http://localhost:2000/api/new", options).then(res => {
+    fetch("http://192.168.1.9:2000/api/new", options).then(res => {
             console.log(res)
             updatePost()
     })
